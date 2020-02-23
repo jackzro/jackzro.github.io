@@ -118,6 +118,7 @@ header{
 #content h1 {
   font-size: 4rem;
   margin-bottom: 2rem;
+  animation: text 3s 1;
 }
 
 #content .button{
@@ -126,6 +127,7 @@ header{
   padding: 1rem 10rem;
   background:black;
   transition: color 0.3s, background 0.3s;
+  animation: text 3s 1;
 }
 #content .button:hover{
   color: black;
@@ -154,6 +156,22 @@ header{
   background-color: black;
   font-size: 40px;
   font-family: sans-serif;
+}
+
+@keyframes text{
+  0%{
+    color: black;
+    margin-bottom: -40px;
+  }
+  30%{
+    letter-spacing: 25px;
+    margin-bottom: -40px;
+  }
+  85%{
+    letter-spacing: 8px;
+    margin-bottom: -40px;
+  }
+
 }
 
 /*content omron*/
@@ -414,4 +432,90 @@ header{
 
 .card:hover .contentaso{
   transform: translateY(0% );
+}
+
+#split{
+  position: relative;
+  display: flex;
+  height: 100vh;
+}
+
+section .screen{
+  position: relative;
+  flex-grow: 1;
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+section .screen:hover{
+  flex-grow: 5;
+}
+
+section .screen:nth-child(1){
+  background: darkcyan;
+}
+section .screen:nth-child(2){
+  background: darkkhaki;
+}
+
+section .screen .box {
+  max-width: 300px;
+  text-align: center;
+  transition: 0.5s;
+  margin: 100px;
+}
+section .screen .box .imgbx{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.imgbx img{
+  max-width: 100%;
+}
+
+section .screen .box a{
+  padding: 10px 20px;
+  background: #262626;
+  color: #fff;
+  text-decoration: none;
+}
+
+section .screen .box .isi{
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  padding: 100px;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+
+} 
+
+section .screen .box a:hover ~ .isi,.isi:hover{
+  opacity: 1;
+  visibility: visible;
+}
+
+section .screen:nth-child(2) .isi{
+  background: yellow;
+}
+section .screen .box h2{
+  font-size: 60px;
+  font-family: sans-serif;
+}
+
+#is ul li{
+  font-size: 40px;
+  font-family: sans-serif;
+
+
 }
